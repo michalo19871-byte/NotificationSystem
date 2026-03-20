@@ -20,3 +20,9 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+NotificationSystem/.vs
+/bin
+NotificationSystem/bin
+NotificationSystem/obj
+NotificationSystem.Tests/bin
+NotificationSystem.Tests/obj
