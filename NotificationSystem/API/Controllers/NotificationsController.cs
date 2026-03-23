@@ -47,7 +47,7 @@ namespace NotificationSystem.API.Controllers
         [HttpGet("{id:guid}")]
         [ProducesResponseType(typeof(NotificationMapper.NotificationResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        private async Task<IActionResult> GetById(Guid id, CancellationToken ct)
+        public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
         {
             var notification = await _service.GetStatusAsync(id, ct);
             return notification is null
