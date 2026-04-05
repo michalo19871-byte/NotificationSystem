@@ -1,0 +1,24 @@
+name: Push github directory to another azure devops repository
+on:
+  push:
+    branches:
+      - '*' # Trigger on all branches
+  workflow_dispatch: # Manual trigger from GitHub Actions UI
+  
+jobs:
+    check-bats-wersion:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Run script file
+              env:
+                AZUREPAT: ${{ secrets.AZUREPAT }}
+                AZUSERNAME: ${{ secrets.AZUSERNAME }}
+                AZUSER_EMAIL: ${{ secrets.AZUSER_EMAIL }}
+                AZORG: ${{ secrets.AZORG }}
+              run: |
+                chmod +x ./script/commit.sh
+                ./script/commit.sh
+              shell: bash
+
+  
