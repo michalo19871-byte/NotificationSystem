@@ -88,7 +88,7 @@ public class NotificationsApiTests : IClassFixture<WebApplicationFactory<Program
     [Fact]
     public async Task GET_All_ShouldReturn_AllCreatedNotifications()
     {
-        await _client.PostAsJsonAsync("/api/notifications", EmailRequest("a@a.com", "S1", "B1"));
+        await _client.PostAsJsonAsync("/api/notifications", EmailRequest("test@example.com", "S1", "B1"));
         await _client.PostAsJsonAsync("/api/notifications", new CreateNotificationRequest
         {
             Type = NotificationType.Sms,
